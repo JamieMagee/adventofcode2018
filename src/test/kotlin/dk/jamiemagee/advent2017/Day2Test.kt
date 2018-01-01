@@ -7,7 +7,7 @@ internal class Day2Test {
 
     @Test
     fun `Part one samples`() {
-        val sampleInput = listOf("5\t1\t9\t5", "7\t5\t3","2\t4\t6\t8")
+        val sampleInput = listOf("5\t1\t9\t5", "7\t5\t3", "2\t4\t6\t8")
         assertEquals(18, Day2(sampleInput).partOne())
     }
 

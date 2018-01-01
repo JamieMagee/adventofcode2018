@@ -25,7 +25,7 @@ class Day8(private val input: List<String>) {
         return registers.maxBy { it.value }!!.value
     }
 
-    fun partTwo() : Int{
+    fun partTwo(): Int {
         return highest
     }
 

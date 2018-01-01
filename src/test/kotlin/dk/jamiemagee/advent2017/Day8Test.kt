@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 internal class Day8Test {
 
-    private val sampleInput = arrayListOf(
+    private val sampleInput = listOf(
             "b inc 5 if a > 1",
             "a inc 1 if b < 5",
             "c dec -10 if a >= 1",
