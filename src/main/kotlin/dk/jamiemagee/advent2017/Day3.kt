@@ -1,6 +1,8 @@
 package dk.jamiemagee.advent2017
 
-import java.lang.Math.*
+import java.lang.Math.ceil
+import java.lang.Math.floor
+import java.lang.Math.pow
 import kotlin.math.abs
 import kotlin.math.sqrt
 

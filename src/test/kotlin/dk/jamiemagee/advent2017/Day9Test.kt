@@ -1,5 +1,6 @@
 package dk.jamiemagee.advent2017
 
+import dk.jamiemagee.advent.resourceAsString
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 

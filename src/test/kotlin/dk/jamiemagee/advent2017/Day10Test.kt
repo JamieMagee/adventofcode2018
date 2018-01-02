@@ -4,25 +4,24 @@ import dk.jamiemagee.advent.resourceAsString
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
-internal class Day6Test {
-
+internal class Day10Test {
     @Test
     fun `Part one samples`() {
-        Assertions.assertEquals(4, Day6("2\t4\t1\t2").partOne())
+        Assertions.assertEquals("", Day10("").partOne())
     }
 
     @Test
     fun `Part one`() {
-        println(Day6(resourceAsString("Day6")).partOne())
+        Assertions.assertEquals(resourceAsString("Day10"), Day10("").partOne())
     }
 
     @Test
     fun `Part two samples`() {
-        Assertions.assertEquals(4, Day6("2\t4\t1\t2").partTwo())
+        Assertions.assertEquals("", Day10("").partTwo())
     }
 
     @Test
     fun `Part two`() {
-        println(Day6(resourceAsString("Day6")).partTwo())
+        Assertions.assertEquals(resourceAsString("Day10"), Day10("").partTwo())
     }
 }
