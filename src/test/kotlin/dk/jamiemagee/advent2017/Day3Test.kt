@@ -1,28 +1,36 @@
 package dk.jamiemagee.advent2017
 
+import assertk.assert
+import assertk.assertions.isEqualTo
 import dk.jamiemagee.advent.resourceAsString
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 internal class Day3Test {
 
+    private val input = resourceAsString(2017, 3)
+
     @Test
     fun `Part one samples`() {
-        assertEquals(0, Day3("1").partOne())
-        assertEquals(3, Day3("12").partOne())
-        assertEquals(2, Day3("23").partOne())
-        assertEquals(31, Day3("1024").partOne())
+        val sampleInput = mapOf(
+                "1" to 0,
+                "12" to 3,
+                "23" to 2,
+                "1024" to 31
+        )
 
+        sampleInput.forEach {
+            assert(Day3(it.key).partOne()).isEqualTo(it.value)
+        }
     }
 
     @Test
     fun `Part one`() {
-        println(Day3(resourceAsString("Day3")).partOne())
+        println(Day3(input).partOne())
     }
 
     @Test
     fun `Part two`() {
-        println(Day3(resourceAsString("Day3")).partTwo())
+        println(Day3(input).partTwo())
     }
 
 }

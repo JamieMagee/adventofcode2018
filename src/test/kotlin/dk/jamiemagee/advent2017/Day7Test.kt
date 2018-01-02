@@ -1,12 +1,16 @@
 package dk.jamiemagee.advent2017
 
+import assertk.assert
+import assertk.assertions.isEqualTo
 import dk.jamiemagee.advent.resourceAsStringList
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 internal class Day7Test {
 
-    private val sampleInput = arrayListOf("pbga (66)",
+    private val input = resourceAsStringList(2017, 7)
+
+    private val sampleInput = arrayListOf(
+            "pbga (66)",
             "xhth (57)",
             "ebii (61)",
             "havc (66)",
@@ -18,25 +22,26 @@ internal class Day7Test {
             "jptl (61)",
             "ugml (68) -> gyxo, ebii, jptl",
             "gyxo (61)",
-            "cntj (57)")
+            "cntj (57)"
+    )
 
     @Test
     fun `Part one samples`() {
-        Assertions.assertEquals("tknk", Day7(sampleInput).partOne())
+        assert(Day7(sampleInput).partOne()).isEqualTo("tknk")
     }
 
     @Test
     fun `Part one`() {
-        println(Day7(resourceAsStringList("Day7")).partOne())
+        println(Day7(input).partOne())
     }
 
     @Test
     fun `Part two samples`() {
-        Assertions.assertEquals("ugml", Day7(sampleInput).partTwo())
+        assert(Day7(sampleInput).partOne()).isEqualTo("ugml")
     }
 
     @Test
     fun `Part two`() {
-        println(Day7(resourceAsStringList("Day7")).partTwo())
+        println(Day7(input).partTwo())
     }
 }
