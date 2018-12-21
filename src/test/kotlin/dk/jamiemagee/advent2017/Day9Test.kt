@@ -1,12 +1,10 @@
 package dk.jamiemagee.advent2017
 
-import dk.jamiemagee.advent.resourceAsString
+import dk.jamiemagee.advent.TestInput
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
-internal class Day9Test {
-
-    private val input = resourceAsString(2017, 9)
+internal class Day9Test : TestInput() {
 
     @Test
     fun `Part one samples`() {
@@ -28,7 +26,7 @@ internal class Day9Test {
 
     @Test
     fun `Part one`() {
-        println(Day9(input).partOne())
+        printPartOne(Day9(input).partOne())
     }
 
     @Test
@@ -50,6 +48,6 @@ internal class Day9Test {
 
     @Test
     fun `Part two`() {
-        println(Day9(input).partTwo())
+        printPartTwo(Day9(input).partTwo())
     }
 }

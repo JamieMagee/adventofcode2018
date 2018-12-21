@@ -2,12 +2,10 @@ package dk.jamiemagee.advent2017
 
 import assertk.assert
 import assertk.assertions.isEqualTo
-import dk.jamiemagee.advent.resourceAsString
+import dk.jamiemagee.advent.TestInput
 import org.junit.jupiter.api.Test
 
-internal class Day3Test {
-
-    private val input = resourceAsString(2017, 3)
+internal class Day3Test : TestInput() {
 
     @Test
     fun `Part one samples`() {
@@ -25,12 +23,12 @@ internal class Day3Test {
 
     @Test
     fun `Part one`() {
-        println(Day3(input).partOne())
+        printPartOne(Day3(input).partOne())
     }
 
     @Test
     fun `Part two`() {
-        println(Day3(input).partTwo())
+        printPartTwo(Day3(input).partTwo())
     }
 
 }

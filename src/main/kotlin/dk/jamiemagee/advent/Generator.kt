@@ -68,8 +68,11 @@ private fun generateTest(packageName: String, fileName: String, filePath: String
             .addStaticImport("dk.jamiemagee.advent", ::resourceAsString.name)
             .addType(TypeSpec.classBuilder(testFileName)
                     .addModifiers(KModifier.INTERNAL)
+                    .addProperty(PropertySpec.builder("input", String::class)
+                            .build())
                     .addFunction(FunSpec.builder("`Part one samples`")
                             .addAnnotation(org.junit.jupiter.api.Test::class)
+                            .addAnnotation(org.junit.jupiter.api.Disabled::class)
                             .addCode(CodeBlock.of(
                                     "%T.assertEquals(\"\", $fileName(\"\").partOne())\n",
                                     Assertions::class
@@ -77,6 +80,7 @@ private fun generateTest(packageName: String, fileName: String, filePath: String
                             .build())
                     .addFunction(FunSpec.builder("`Part one`")
                             .addAnnotation(org.junit.jupiter.api.Test::class)
+                            .addAnnotation(org.junit.jupiter.api.Disabled::class)
                             .addCode(CodeBlock.of(
                                     "%T.assertEquals(%N(\"$fileName\"), $fileName(\"\").partOne())\n",
                                     Assertions::class,
@@ -85,6 +89,7 @@ private fun generateTest(packageName: String, fileName: String, filePath: String
                             .build())
                     .addFunction(FunSpec.builder("`Part two samples`")
                             .addAnnotation(org.junit.jupiter.api.Test::class)
+                            .addAnnotation(org.junit.jupiter.api.Disabled::class)
                             .addCode(CodeBlock.of(
                                     "%T.assertEquals(\"\", $fileName(\"\").partTwo())\n",
                                     Assertions::class
@@ -92,8 +97,9 @@ private fun generateTest(packageName: String, fileName: String, filePath: String
                             .build())
                     .addFunction(FunSpec.builder("`Part two`")
                             .addAnnotation(org.junit.jupiter.api.Test::class)
+                            .addAnnotation(org.junit.jupiter.api.Disabled::class)
                             .addCode(CodeBlock.of(
-                                    "%T.assertEquals(%N(\"$fileName\"), $fileName(\"\").partTwo())\n",
+                                    "println(%N(\"$fileName\"), $fileName(\"\").partTwo())\n",
                                     Assertions::class,
                                     ::resourceAsString.name
                             ))
@@ -106,5 +112,6 @@ private fun generateTest(packageName: String, fileName: String, filePath: String
 
 private fun fetchInput(year: Int, day: Int, cookie: Map<String, String>) {
     val input = get("https://adventofcode.com/$year/day/$day/input", cookies = cookie).text.trim()
-    File("src/main/resources/Day$day.txt").writeText(input)
+    File("src/main/resources/$year").mkdirs()
+    File("src/main/resources/$year/$day.txt").writeText(input)
 }

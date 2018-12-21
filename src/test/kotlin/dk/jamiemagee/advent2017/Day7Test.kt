@@ -43,6 +43,7 @@ internal class Day7Test {
     }
 
     @Test
+    @Disabled
     fun `Part two`() {
         println(Day7(input).partTwo())
     }
