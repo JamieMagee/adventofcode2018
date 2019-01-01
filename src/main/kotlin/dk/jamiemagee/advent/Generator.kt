@@ -65,7 +65,7 @@ private fun generateSolution(packageName: String, fileName: String, filePath: St
 private fun generateTest(packageName: String, fileName: String, filePath: String) {
     val testFileName = "${fileName}Test"
     val file = FileSpec.builder(packageName, testFileName)
-            .addStaticImport("dk.jamiemagee.advent", ::resourceAsString.name)
+            .addImport("dk.jamiemagee.advent", ::resourceAsString.name)
             .addType(TypeSpec.classBuilder(testFileName)
                     .addModifiers(KModifier.INTERNAL)
                     .addProperty(PropertySpec.builder("input", String::class)
