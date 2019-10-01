@@ -29,7 +29,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile 'com.squareup:kotlinpoet:1.4.0'
     compile 'khttp:khttp:1.0.0'
-    compile 'org.junit.jupiter:junit-jupiter-api:5.5.1'
+    compile 'org.junit.jupiter:junit-jupiter-api:5.5.2'
     testCompile 'com.willowtreeapps.assertk:assertk:0.10'
     testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
 }
