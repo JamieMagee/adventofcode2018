@@ -31,7 +31,7 @@ dependencies {
     compile 'khttp:khttp:1.0.0'
     compile 'org.junit.jupiter:junit-jupiter-api:5.6.1'
     testCompile 'com.willowtreeapps.assertk:assertk:0.22'
-    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
 }
 
 compileKotlin {
